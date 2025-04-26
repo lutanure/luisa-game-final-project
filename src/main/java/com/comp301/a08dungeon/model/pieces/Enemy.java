@@ -2,9 +2,22 @@ package com.comp301.a08dungeon.model.pieces;
 
 public class Enemy extends APiece implements MovablePiece {
 
-  public Enemy() {}
+  public Enemy() {
+    super("Enemy", "resources/enemy.png");
+  }
 
   public CollisionResult collide(Piece other) {
-    return null;
+    if (other == null) {
+      return new CollisionResult(0, CollisionResult.Result.CONTINUE);
+    }
+
+    if (other instanceof Treasure) {
+      return new CollisionResult(0, CollisionResult.Result.CONTINUE);
+    }
+
+    if (other instanceof Hero) {
+      return new CollisionResult(0, CollisionResult.Result.GAME_OVER);
+    }
+    throw new IllegalArgumentException();
   }
 }
