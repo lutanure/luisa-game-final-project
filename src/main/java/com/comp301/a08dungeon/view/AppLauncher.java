@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 public class AppLauncher extends Application {
   @Override
   public void start(Stage stage) {
-    stage.setTitle("lu's Dungeon Crawler");
+    stage.setTitle("val the valkyrie");
     
     Model model = new ModelImpl(10, 10);
     ControllerImpl controller = new ControllerImpl(model);
@@ -21,7 +21,7 @@ public class AppLauncher extends Application {
     scene.getStylesheets().add("dungeon.css");
     
     stage.setScene(scene);
-
+    model.addObserver(view);
     stage.show();
   }
 }

@@ -3,7 +3,7 @@ package com.comp301.a08dungeon.model.pieces;
 public class Enemy extends APiece implements MovablePiece {
 
   public Enemy() {
-    super("Enemy", "resources/enemy.png");
+    super("Enemy", "/fenrir.png");
   }
 
   public CollisionResult collide(Piece other) {

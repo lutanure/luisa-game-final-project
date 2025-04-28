@@ -1,0 +1,12 @@
+.title-screen .label {
+  font-family: "Serif";
+  font-weight: bold;
+  font-size: 35px;
+  -fx-font-family: "Serif";
+  -fx-font-weight: bold;
+  -fx-font-size: 35px;
+}
+.game-view {
+  background-color: #97a2a4;
+  -fx-background-color: #979797;
+}
