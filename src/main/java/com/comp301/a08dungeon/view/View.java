@@ -35,8 +35,6 @@ public class View implements FXComponent, Observer {
 
   @Override
   public void update() {
-    Scene scene = new Scene(render(), windowWidth, windowHeight);
-    scene.getStylesheets().add("dungeon.css");
-    stage.setScene(scene);
+    stage.getScene().setRoot(render());
   }
 }

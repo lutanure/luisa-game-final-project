@@ -19,9 +19,9 @@ public class AppLauncher extends Application {
     Scene scene = new Scene(view.render(), 600, 600);
 
     scene.getStylesheets().add("dungeon.css");
-    
     stage.setScene(scene);
-    model.addObserver(view);
     stage.show();
+    model.addObserver(view);
+
   }
 }

@@ -30,7 +30,7 @@ public class TitleScreenView implements FXComponent {
     Button startBtn = new Button("start game");
     startBtn.setOnAction(e -> controller.startGame());
 
-    Label credit = new Label("By lu");
+    Label credit = new Label("by lu");
 
     VBox layout = new VBox(15, title, highScore, lastScore, startBtn, credit);
     layout.setAlignment(Pos.CENTER);

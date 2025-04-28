@@ -86,7 +86,7 @@ public class GameView implements FXComponent{
     levLabel.getStyleClass().add("level-label");
 
 
-    HBox bottom = new HBox(20, scoreLabel, controls);
+    HBox bottom = new HBox(20, scoreLabel, levLabel, controls);
     bottom.setPadding(new Insets(10));
 
     BorderPane root = new BorderPane();

@@ -10,3 +10,10 @@
   background-color: #97a2a4;
   -fx-background-color: #979797;
 }
+
+.title-screen{
+  background-image: url("val_the_valk.png");
+  -fx-background-image: url("val_the_valk.png");
+}
+
+
