@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.scene.Node;  
 
 public class GameView implements FXComponent{
@@ -34,10 +35,9 @@ public class GameView implements FXComponent{
     int cols = model.getWidth();
     int cellSize = 600 / cols;
 
-    GridPane grid = new GridPane();
-    grid.setPadding(new Insets(10));
-    grid.setHgap(0);
-    grid.setVgap(0);
+    Pane board = new Pane();
+    board.setPrefSize(600, 600);
+    board.setPadding(new Insets(10));
 
 
     for (int r = 0; r < rows; r++) {
@@ -46,9 +46,7 @@ public class GameView implements FXComponent{
         Piece piece = model.get(p);
         Node cell;  
         if (piece == null) {
-          Label blank = new Label();
-          blank.setPrefSize(cellSize, cellSize);
-          cell = blank;
+          cell = new Label();
         } else {
           String resPath = piece.getResourcePath();
           URL url = getClass().getResource(resPath);
@@ -62,9 +60,9 @@ public class GameView implements FXComponent{
           iv.setFitHeight(cellSize);
           cell = iv;
         }
-        grid.add(cell, c, r);
-        GridPane.setHalignment(cell, HPos.CENTER);
-        GridPane.setValignment(cell, VPos.CENTER);
+        cell.setLayoutX(c * cellSize);
+        cell.setLayoutY(r * cellSize);
+        board.getChildren().add(cell);
       }
     }
 
@@ -98,8 +96,9 @@ public class GameView implements FXComponent{
     bottom.setPadding(new Insets(10));
 
     BorderPane root = new BorderPane();
-    root.setCenter(grid);
+    root.setCenter(board);
     root.setBottom(bottom);
+    root.setPrefSize(600, 600 + 60);
     root.getStyleClass().add("game-view");
     return root;
   }
