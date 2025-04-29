@@ -128,7 +128,6 @@ public class BoardImpl implements Board {
       board[newRow][newCol] = null;
     }
     if (destination instanceof Exit) {
-      set(hero, new Posn(newRow, newCol));
       return new CollisionResult(0, CollisionResult.Result.NEXT_LEVEL);
     }
     set(hero, new Posn(newRow, newCol));
