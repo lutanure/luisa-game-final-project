@@ -5,9 +5,7 @@ import com.comp301.a08dungeon.model.Model;
 import com.comp301.a08dungeon.model.board.Posn;
 import com.comp301.a08dungeon.model.pieces.Piece;
 
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.VPos;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
