@@ -32,11 +32,13 @@ public class GameView implements FXComponent{
   public Parent render() {
     int rows = model.getHeight();
     int cols = model.getWidth();
+    int cellSize = 600 / cols;
 
     GridPane grid = new GridPane();
     grid.setPadding(new Insets(10));
     grid.setHgap(0);
     grid.setVgap(0);
+
 
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < cols; c++) {
@@ -44,7 +46,9 @@ public class GameView implements FXComponent{
         Piece piece = model.get(p);
         Node cell;  
         if (piece == null) {
-          cell = new Label(" ");
+          Label blank = new Label();
+          blank.setPrefSize(cellSize, cellSize);
+          cell = blank;
         } else {
           String resPath = piece.getResourcePath();
           URL url = getClass().getResource(resPath);
@@ -53,11 +57,9 @@ public class GameView implements FXComponent{
           }
           Image img = new Image(url.toExternalForm());
           ImageView iv = new ImageView(img);
-          iv.setFitWidth(40);
-          iv.setFitHeight(40);
-          cell = iv;
-          iv.setFitWidth(40);
-          iv.setFitHeight(40);
+          iv.setPreserveRatio(true);
+          iv.setFitWidth(cellSize);
+          iv.setFitHeight(cellSize);
           cell = iv;
         }
         grid.add(cell, c, r);
