@@ -77,18 +77,24 @@ public class GameView implements FXComponent{
     left.setOnAction(e -> controller.moveLeft());
     right.setOnAction(e -> controller.moveRight());
 
-    HBox controls = new HBox(10, left, up, down, right);
-    controls.setPadding(new Insets(10));
-    controls.getStyleClass().add("controls");
-
     Label scoreLabel = new Label("score: " + model.getCurScore());
     scoreLabel.getStyleClass().add("score-label");
 
     Label levLabel = new Label("level: " + model.getLevel());
     levLabel.getStyleClass().add("level-label");
 
+    GridPane setup = new GridPane();
+    setup.setHgap(5);
+    setup.setVgap(5);
+    setup.add(up,    1, 0);
+    setup.add(left,  0, 1);
+    setup.add(down,  1, 2);
+    setup.add(right, 2, 1);
+    setup.setPadding(new Insets(10));
+    setup.getStyleClass().add("controls");
 
-    HBox bottom = new HBox(20, scoreLabel, levLabel, controls);
+
+    HBox bottom = new HBox(20, scoreLabel, levLabel, setup);
     bottom.setPadding(new Insets(10));
 
     BorderPane root = new BorderPane();
