@@ -12,10 +12,10 @@ import javafx.scene.control.Label;
 import java.net.URL;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.Node;  
 
 public class GameView implements FXComponent{
@@ -31,12 +31,11 @@ public class GameView implements FXComponent{
   public Parent render() {
     int rows = model.getHeight();
     int cols = model.getWidth();
-    int cellSize = 600 / cols;
+    int cellSize = 580 / rows;
 
     Pane board = new Pane();
+    board.setPadding(new Insets(10,0,10,0));
     board.setPrefSize(600, 600);
-    board.setPadding(new Insets(10));
-
 
     for (int r = 0; r < rows; r++) {
       for (int c = 0; c < cols; c++) {
@@ -82,21 +81,20 @@ public class GameView implements FXComponent{
     GridPane setup = new GridPane();
     setup.setHgap(5);
     setup.setVgap(5);
-    setup.add(up,    1, 0);
-    setup.add(left,  0, 1);
-    setup.add(down,  1, 2);
+    setup.add(up, 1, 0);
+    setup.add(left, 0, 1);
+    setup.add(down, 1, 2);
     setup.add(right, 2, 1);
     setup.setPadding(new Insets(10));
     setup.getStyleClass().add("controls");
 
-
+ 
     HBox bottom = new HBox(20, scoreLabel, levLabel, setup);
     bottom.setPadding(new Insets(10));
+    bottom.setPrefSize(600, 100);
 
-    BorderPane root = new BorderPane();
-    root.setCenter(board);
-    root.setBottom(bottom);
-    root.setPrefSize(600, 600 + 60);
+    VBox root = new VBox();
+    root.getChildren().addAll(board, bottom);
     root.getStyleClass().add("game-view");
     return root;
   }

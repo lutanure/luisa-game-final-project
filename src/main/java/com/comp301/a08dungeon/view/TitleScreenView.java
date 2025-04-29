@@ -22,7 +22,13 @@ public class TitleScreenView implements FXComponent {
   @Override
   public Parent render() {
     Label title = new Label("Val the Valkyrie");
-    title.setStyle("-fx-font-size: 40px; -fx-font-weight: bold;");
+    title.setStyle("-fx-font-size: 40px;");
+
+    Label backstory1 = new Label("To enter vallhalla, Val must die bravely in battle.");
+    Label backstory2 = new Label("Help Val collect as much gold as possible before the fenrir get to her.");
+    backstory1.setStyle("-fx-font-size: 20px;");
+    backstory2.setStyle("-fx-font-size: 20px;");
+
 
     Label highScore = new Label("high score: " + model.getHighScore());
     Label lastScore = new Label("last score:  " + model.getCurScore());
@@ -30,9 +36,10 @@ public class TitleScreenView implements FXComponent {
     Button startBtn = new Button("start game");
     startBtn.setOnAction(e -> controller.startGame());
 
-    Label credit = new Label("by lu");
+    Label credit = new Label("by luisa tanure");
+    credit.setStyle("-fx-font-size: 20px;");
 
-    VBox layout = new VBox(15, title, highScore, lastScore, startBtn, credit);
+    VBox layout = new VBox(15, title, backstory1, backstory2, highScore, lastScore, startBtn, credit);
     layout.setAlignment(Pos.CENTER);
 
     StackPane root = new StackPane(layout);

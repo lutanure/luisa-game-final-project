@@ -16,7 +16,7 @@ public class AppLauncher extends Application {
     Model model = new ModelImpl(10, 10);
     ControllerImpl controller = new ControllerImpl(model);
     View view = new View(controller, model, stage, 600, 600);
-    Scene scene = new Scene(view.render(), 600, 600);
+    Scene scene = new Scene(view.render(), 600, 700);
 
     scene.getStylesheets().add("dungeon.css");
     stage.setScene(scene);
