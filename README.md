@@ -4,7 +4,7 @@ A 2D dungeon crawler built in Java with a JavaFX UI. This project was created as
 
 ## Demo
 <p align="center">
-  <img src="screenshots/demo.gif" width="700">
+  <img src="screenshots/demo.gif" width="300">
 </p>
 
 ## Gameplay
