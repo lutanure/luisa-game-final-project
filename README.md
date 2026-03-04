@@ -3,14 +3,17 @@
 A 2D dungeon crawler built in Java with a JavaFX UI. This project was created as a final course project and showcases a clean separation of responsibilities using MVC + the Observer pattern.
 
 ## Demo
-![Gameplay](screenshots/demo.gif)
+<p align="center">
+  <img src="screenshots/demo.gif" width="700">
+</p>
 
 ## Gameplay
 **Goal:** Explore each room, collect treasure, avoid enemies, and reach the exit to advance.
 
-<img src="screenshots/ss_landing.png" width="300">
-
-<img src="screenshots/ss_game.png" width="300">
+<p align="center">
+  <img src="screenshots/ss_landing.png" width="45%">
+  <img src="screenshots/ss_game.png" width="45%">
+</p>
 
 ### Controls
 - In-screen buttons
