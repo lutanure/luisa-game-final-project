@@ -24,8 +24,8 @@ public class TitleScreenView implements FXComponent {
     Label title = new Label("Val the Valkyrie");
     title.setStyle("-fx-font-size: 40px;");
 
-    Label backstory1 = new Label("To enter vallhalla, Val must die bravely in battle.");
-    Label backstory2 = new Label("Help Val collect as much gold as possible before the fenrir get to her.");
+    Label backstory1 = new Label("Gather all the gold you can before the Fenrir get you.");
+    Label backstory2 = new Label("Fall with glory, rise to Valhalla..");
     backstory1.setStyle("-fx-font-size: 20px;");
     backstory2.setStyle("-fx-font-size: 20px;");
 
