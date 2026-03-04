@@ -36,3 +36,23 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+cat > .gitignore <<'EOF'
+# Mac
+.DS_Store
+
+# Java / build outputs
+*.class
+.gradle/
+build/
+out/
+
+# IDE
+.idea/
+*.iml
+
+# Don't commit source design files / archives / documents
+*.psd
+*.zip
+*.pdf
+EOF
