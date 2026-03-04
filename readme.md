@@ -8,9 +8,9 @@ A 2D dungeon crawler built in Java with a JavaFX UI. This project was created as
 ## Gameplay
 **Goal:** Explore each room, collect treasure, avoid enemies, and reach the exit to advance.
 
-![Landing](screenshots/ss_landing.png)
+<img src="screenshots/ss_landing.png" width="600">
 
-![Gameplay](screenshots/ss_game.png)
+<img src="screenshots/ss_game.png" width="600">
 
 ### Controls
 - In-screen buttons
